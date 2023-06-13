@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome To Dragon Page</h1>
+    <ul>
+        <% for (const dragon in dragons) {%>
+            <li style="margin-bottom: 20px">
+                <img style="width: 80px" src="<%=dragons[dragon].img%>">
+                <text>This is <%=dragons[dragon].name%> from the region of <%=dragons[dragon].territory%></text>
+                <form method="GET" action="/updateDragon/<%=dragon%>">
+                    <input type="submit" value="Edit Dragon"/>
+                </form>
+                <form method="POST" action="/deleteDragon/<%=dragon%>">
+                    <input type="submit" value="Delete Dragon"/>
+                </form>
+            </li>
+        <% } %>
+    </ul>
+    <form method="GET" action="/addDragon">
+        <input type="submit" value="Add Dragon"/>
+    </form>
+</body>
+</html>

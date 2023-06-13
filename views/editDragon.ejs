@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome To Edit Dragon Page</h1>
+    <form method="POST" action="/updateDragon/<%=dragonId%>">
+        <label>
+            Image: 
+            <input name="img" value="<%= dragon.img%>"/>
+        </label>
+        <label>
+            Name: 
+            <input name="name" value="<%= dragon.name%>"/>
+        </label>
+        <label>
+            Territory: 
+            <input name="territory" value="<%= dragon.territory%>"/>
+        </label>
+        <input type="submit" value="Edit Dragon"/>
+    </form>
+</body>
+</html>
